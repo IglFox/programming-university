@@ -130,7 +130,7 @@ void String::Remove(int index, int count) {
     data = newData;
 }
 
-void String::Insert(char* s, int index) {
+void String::Insert(const char* s, int index) {
     if (!s || index < 0) {
         return;
     }

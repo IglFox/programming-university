@@ -18,7 +18,7 @@ public:
     int FindLast(char ch) const;
     String Substr(int index, int count) const;
     void Remove(int index, int count);
-    void Insert(char* s, int index);
+    void Insert(const char* s, int index);
     void print() const;
 };
 

@@ -1,11 +1,11 @@
 public class Complex {
-    private double real;      // Действительная часть
-    private double imaginary; // Мнимая часть
-    private double modulus;   // Модуль комплексного числа
+    private double real;
+    private double imaginary;
+    private double modulus;
 
-    // Конструкторы
     public Complex() {
-        this(0, 0);
+        this.real = 0;
+        this.imaginary = 0;
     }
 
     public Complex(double real, double imaginary) {
@@ -14,12 +14,10 @@ public class Complex {
         calculateModulus();
     }
 
-    // Вычисление модуля
     private void calculateModulus() {
         this.modulus = Math.sqrt(real * real + imaginary * imaginary);
     }
 
-    // Геттеры
     public double getReal() {
         return real;
     }
@@ -32,24 +30,20 @@ public class Complex {
         return modulus;
     }
 
-    // Сложение
     public Complex add(Complex other) {
         return new Complex(this.real + other.real, this.imaginary + other.imaginary);
     }
 
-    // Вычитание
     public Complex subtract(Complex other) {
         return new Complex(this.real - other.real, this.imaginary - other.imaginary);
     }
 
-    // Умножение
     public Complex multiply(Complex other) {
         double newReal = this.real * other.real - this.imaginary * other.imaginary;
         double newImaginary = this.real * other.imaginary + this.imaginary * other.real;
         return new Complex(newReal, newImaginary);
     }
 
-    // Деление
     public Complex divide(Complex other) {
         double denominator = other.real * other.real + other.imaginary * other.imaginary;
         if (denominator == 0) {
@@ -61,7 +55,6 @@ public class Complex {
         return new Complex(newReal, newImaginary);
     }
 
-    // Вывод комплексного числа
     public void print() {
         if (imaginary >= 0) {
             System.out.printf("%.2f + %.2fi\n", real, imaginary);
